@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Entities
 {
-    public class Character
+    public class Character:IEntity
     {
         public int Id { get; set; }
 

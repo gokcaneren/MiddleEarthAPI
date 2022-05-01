@@ -9,12 +9,7 @@ namespace MiddleEarthApi.Controllers
     [ApiController]
     public class CharactersController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var characters = new CharacterService().GetAll();
-            return Ok(characters);
-        }
+        
 
 
     }
