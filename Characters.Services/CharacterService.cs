@@ -10,9 +10,9 @@ namespace Characters.Services
 {
     public class CharacterService:IService
     {
-        private readonly CharacterRepository _characterRepository;
+        private readonly ICharacterRepository _characterRepository;
 
-        public CharacterService(CharacterRepository characterRepository)
+        public CharacterService(ICharacterRepository characterRepository)
         {
             _characterRepository = characterRepository;
         }

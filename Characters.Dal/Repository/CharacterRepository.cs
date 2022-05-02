@@ -12,10 +12,12 @@ namespace Characters.Dal.Repository
     {
         private readonly ApplicationDbContext _context;
 
+
         public CharacterRepository(ApplicationDbContext context)
         {
             _context = context;
         }
+
 
         public async Task<IList<Character>> GetAll()
         {
