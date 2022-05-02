@@ -9,8 +9,20 @@ namespace MiddleEarthApi.Controllers
     [ApiController]
     public class CharactersController : ControllerBase
     {
-        
+        private readonly CharacterService _characterService;
 
+        public CharactersController(CharacterService characterService)
+        {
+            _characterService = characterService;
+        }
+
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_characterService.GetAll());
+        }
+        
 
     }
 }
