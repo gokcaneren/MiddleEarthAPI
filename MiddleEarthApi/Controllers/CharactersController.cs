@@ -9,9 +9,9 @@ namespace MiddleEarthApi.Controllers
     [ApiController]
     public class CharactersController : ControllerBase
     {
-        private readonly CharacterService _characterService;
+        private readonly IService _characterService;
 
-        public CharactersController(CharacterService characterService)
+        public CharactersController(IService characterService)
         {
             _characterService = characterService;
         }

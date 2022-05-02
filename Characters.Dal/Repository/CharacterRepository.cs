@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Dal.Repository
 {
-    public class CharacterRepository
+    public class CharacterRepository:ICharacterRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -17,11 +17,19 @@ namespace Characters.Dal.Repository
             _context = context;
         }
 
-
-        public async Task<List<Character>> GetAll()
+        public async Task<IList<Character>> GetAll()
         {
             return await _context.Characters.ToListAsync();
-        } 
+        }
 
+        public Task<Character> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Character>> GetCharacterByName(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Characters.Services
+namespace Characters.Dal.Repository
 {
-    public interface IService
+    public interface IRepository<T> where T :IEntity, new()
     {
-         public Task<IList<Character>> GetAll();
+        Task<IList<T>> GetAll();
+        Task<T> GetById(int id);
     }
 }

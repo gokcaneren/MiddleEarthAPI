@@ -17,7 +17,7 @@ namespace Characters.Services
             _characterRepository = characterRepository;
         }
 
-        public async Task<List<Character>> GetAll()
+        public async Task<IList<Character>> GetAll()
         {
             return await _characterRepository.GetAll();
         }

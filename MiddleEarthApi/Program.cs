@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<CharacterRepository>();
-builder.Services.AddScoped<CharacterService>();
+builder.Services.AddScoped<IService, CharacterService>();
 builder.Services.AddDbContext<ApplicationDbContext>(opt=>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("db"));
