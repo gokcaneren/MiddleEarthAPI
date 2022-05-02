@@ -1,4 +1,5 @@
 ﻿using Characters.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Characters.Dal.Repository
         }
 
 
-        public List<Character> GetAll()
+        public async Task<List<Character>> GetAll()
         {
-            return _context.Characters.ToList();
+            return await _context.Characters.ToListAsync();
         } 
 
     }

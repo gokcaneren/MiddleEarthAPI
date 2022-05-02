@@ -16,11 +16,10 @@ namespace MiddleEarthApi.Controllers
             _characterService = characterService;
         }
 
-
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_characterService.GetAll());
+            return Ok(await _characterService.GetAll());
         }
         
 

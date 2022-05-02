@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Services
 {
-    public class CharacterService
+    public class CharacterService:IService
     {
         private readonly CharacterRepository _characterRepository;
 
@@ -17,11 +17,9 @@ namespace Characters.Services
             _characterRepository = characterRepository;
         }
 
-
-        public List<Character> GetAll()
+        public async Task<List<Character>> GetAll()
         {
-            return _characterRepository.GetAll();
+            return await _characterRepository.GetAll();
         }
-
     }
 }
