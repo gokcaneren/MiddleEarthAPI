@@ -1,4 +1,5 @@
-﻿using Characters.Entities;
+﻿using Characters.DTO.Responses;
+using Characters.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Characters.Services
 {
     public interface IService
     {
-         public Task<IList<Character>> GetAll();
+         public Task<IList<CharactersRespons>> GetAll();
     }
 }

@@ -65,3 +65,7 @@ C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\ne
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Characters.Dal.dll
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Characters.Dal.pdb
+C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Characters.DTO.dll
+C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Characters.DTO.pdb
+C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

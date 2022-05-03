@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Characters.Entities", "Char
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Characters.Services", "Characters.Services\Characters.Services.csproj", "{D8991CB0-C2C3-43C7-98B6-75D2DEC78268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters.Dal", "Characters.Dal\Characters.Dal.csproj", "{DCDE8DCA-6734-44CE-ABB2-EF2BD2EDF66D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Characters.Dal", "Characters.Dal\Characters.Dal.csproj", "{DCDE8DCA-6734-44CE-ABB2-EF2BD2EDF66D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters.DTO", "Characters.DTO\Characters.DTO.csproj", "{55B8A6BE-1FF4-4C03-8A9E-48199A766BC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DCDE8DCA-6734-44CE-ABB2-EF2BD2EDF66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCDE8DCA-6734-44CE-ABB2-EF2BD2EDF66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCDE8DCA-6734-44CE-ABB2-EF2BD2EDF66D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55B8A6BE-1FF4-4C03-8A9E-48199A766BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55B8A6BE-1FF4-4C03-8A9E-48199A766BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55B8A6BE-1FF4-4C03-8A9E-48199A766BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55B8A6BE-1FF4-4C03-8A9E-48199A766BC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

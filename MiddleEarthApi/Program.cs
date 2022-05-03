@@ -1,6 +1,7 @@
 using Characters.Dal;
 using Characters.Dal.Repository;
 using Characters.Services;
+using Characters.Services.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IService, CharacterService>();
 builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
+builder.Services.AddAutoMapper(typeof(CharacterMap));
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt=>
 {
