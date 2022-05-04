@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Characters.Dal.Repository;
+using Characters.DTO.Requests;
 using Characters.DTO.Responses;
 using Characters.Entities;
 using System;
@@ -19,6 +20,13 @@ namespace Characters.Services
         {
             this.mapper = mapper;
             _characterRepository = characterRepository;
+        }
+
+        public async Task<int> AddCharacter(AddCharacterRequest request)
+        {
+            var character = mapper.Map<Character>(request);
+            await _characterRepository.Add(character);
+            return character.Id;
         }
 
         public async Task<IList<CharactersRespons>> GetAll()

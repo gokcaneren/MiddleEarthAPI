@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Characters.DTO.Requests;
 using Characters.DTO.Responses;
 using Characters.Entities;
 using System;
@@ -14,6 +15,7 @@ namespace Characters.Services.Mapping
         public CharacterMap()
         {
             CreateMap<Character, CharactersRespons>();
+            CreateMap<AddCharacterRequest, Character>();
         }
     }
 }

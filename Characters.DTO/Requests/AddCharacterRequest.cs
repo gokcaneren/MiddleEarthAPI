@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Characters.Entities
+namespace Characters.DTO.Requests
 {
-    public class Character:IEntity
+    public class AddCharacterRequest
     {
-        public int Id { get; set; }
-
+        [Required(ErrorMessage = "Character name is required!")]
         public string Name { get; set; }
 
         public int Age { get; set; }
@@ -17,11 +17,5 @@ namespace Characters.Entities
         public int RaceId { get; set; }
 
         public string ImageUrl { get; set; }
-
-        public Race Race { get; set; }
-
-        public bool isAlive { get; set; } = true;
-
-
     }
 }

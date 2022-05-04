@@ -1,4 +1,5 @@
-﻿using Characters.DTO.Responses;
+﻿using Characters.DTO.Requests;
+using Characters.DTO.Responses;
 using Characters.Entities;
 using Characters.Services;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +36,17 @@ namespace MiddleEarthApi.Controllers
         {
             var characters = await _characterService.GetByName(name);
             return Ok(characters);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(AddCharacterRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                int characterId = await _characterService.AddCharacter(request);
+                return CreatedAtAction(nameof(GetById), routeValues: new { id = characterId }, value: null);
+            }
+            return BadRequest(ModelState);
         }
     }
 }

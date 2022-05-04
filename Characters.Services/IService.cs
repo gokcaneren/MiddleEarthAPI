@@ -1,4 +1,5 @@
-﻿using Characters.DTO.Responses;
+﻿using Characters.DTO.Requests;
+using Characters.DTO.Responses;
 using Characters.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,5 +14,6 @@ namespace Characters.Services
          public Task<IList<CharactersRespons>> GetAll();
         Task<CharactersRespons> GetById(int id);
         Task<IList<CharactersRespons>> GetByName(string name);
+        Task<int> AddCharacter(AddCharacterRequest request);
     }
 }

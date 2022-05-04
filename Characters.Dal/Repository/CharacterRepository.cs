@@ -18,6 +18,11 @@ namespace Characters.Dal.Repository
             _context = context;
         }
 
+        public async Task Add(Character entity)
+        {
+            await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+        }
 
         public async Task<IList<Character>> GetAll()
         {

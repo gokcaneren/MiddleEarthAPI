@@ -11,5 +11,7 @@ namespace Characters.Dal.Repository
     {
         Task<IList<T>> GetAll();
         Task<T> GetById(int id);
+        Task Add(T entity);
+
     }
 }
