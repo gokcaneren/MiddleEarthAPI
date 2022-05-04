@@ -9,6 +9,6 @@ namespace Characters.Dal.Repository
 {
     public interface ICharacterRepository:IRepository<Character>
     {
-        Task<IEnumerable<Character>> GetCharacterByName(string name);
+        Task<IEnumerable<Character>> GetByName(string name);
     }
 }

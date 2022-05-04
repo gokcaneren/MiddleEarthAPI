@@ -11,5 +11,7 @@ namespace Characters.Services
     public interface IService
     {
          public Task<IList<CharactersRespons>> GetAll();
+        Task<CharactersRespons> GetById(int id);
+        Task<IList<CharactersRespons>> GetByName(string name);
     }
 }

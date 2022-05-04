@@ -24,14 +24,14 @@ namespace Characters.Dal.Repository
             return await _context.Characters.ToListAsync();
         }
 
-        public Task<Character> GetById(int id)
+        public async Task<Character> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Characters.FindAsync(id);
         }
 
-        public Task<IEnumerable<Character>> GetCharacterByName(string name)
+        public async Task<IEnumerable<Character>> GetByName(string name)
         {
-            throw new NotImplementedException();
+            return await _context.Characters.Where(x => x.Name.Contains(name)).ToListAsync();
         }
     }
 }

@@ -27,5 +27,19 @@ namespace Characters.Services
             var result = mapper.Map<IList<CharactersRespons>>(characters);
             return result;
         }
+
+        public async Task<CharactersRespons> GetById(int id)
+        {
+            var character=await _characterRepository.GetById(id);
+            var result = mapper.Map<CharactersRespons>(character);
+            return result;
+        }
+
+        public async Task<IList<CharactersRespons>> GetByName(string name)
+        {
+            var character=await _characterRepository.GetByName(name);
+            var result = mapper.Map<IList<CharactersRespons>>(character);
+            return result;
+        }
     }
 }
