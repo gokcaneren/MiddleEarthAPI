@@ -63,5 +63,16 @@ namespace MiddleEarthApi.Controllers
             }
             return NotFound(new { message = $"Charcter with id:{id} not found" });
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (await _characterService.IsCharacterExist(id))
+            {
+                await _characterService.DeleteCharacter(id);
+                return Ok();
+            }
+            return NotFound(new { message = $"Charcter with id:{id} not found" });
+        }
     }
 }
