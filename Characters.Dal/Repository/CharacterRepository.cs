@@ -24,6 +24,13 @@ namespace Characters.Dal.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task Delete(int id)
+        {
+            var character = await _context.Characters.FirstOrDefaultAsync(c => c.Id == id);
+            _context.Characters.Remove(character);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IList<Character>> GetAll()
         {
             return await _context.Characters.ToListAsync();
@@ -37,6 +44,17 @@ namespace Characters.Dal.Repository
         public async Task<IEnumerable<Character>> GetByName(string name)
         {
             return await _context.Characters.Where(x => x.Name.Contains(name)).ToListAsync();
+        }
+
+        public async Task<bool> IsExist(int id)
+        {
+            return _context.Characters.Any(x => x.Id == id);
+        }
+
+        public async Task Update(Character entity)
+        {
+            _context.Characters.Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

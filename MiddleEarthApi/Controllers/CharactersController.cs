@@ -48,5 +48,20 @@ namespace MiddleEarthApi.Controllers
             }
             return BadRequest(ModelState);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateCharacterRequest request)
+        {
+            if (await _characterService.IsCharacterExist(id))
+            {
+                if (ModelState.IsValid)
+                {
+                    await _characterService.UpdateCharacter(request);
+                    return Ok();
+                }
+                return BadRequest(ModelState);
+            }
+            return NotFound(new { message = $"Charcter {id} not found" });
+        }
     }
 }

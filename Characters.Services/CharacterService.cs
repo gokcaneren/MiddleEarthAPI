@@ -29,6 +29,11 @@ namespace Characters.Services
             return character.Id;
         }
 
+        public async Task DeleteCharacter(int id)
+        {
+            await _characterRepository.Delete(id);
+        }
+
         public async Task<IList<CharactersRespons>> GetAll()
         {
             var characters = await _characterRepository.GetAll();
@@ -48,6 +53,17 @@ namespace Characters.Services
             var character=await _characterRepository.GetByName(name);
             var result = mapper.Map<IList<CharactersRespons>>(character);
             return result;
+        }
+
+        public async Task<bool> IsCharacterExist(int id)
+        {
+            return await _characterRepository.IsExist(id);
+        }
+
+        public async Task UpdateCharacter(UpdateCharacterRequest request)
+        {
+            var character = mapper.Map<Character>(request);
+            await _characterRepository.Update(character);
         }
     }
 }

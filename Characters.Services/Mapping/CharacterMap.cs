@@ -16,6 +16,7 @@ namespace Characters.Services.Mapping
         {
             CreateMap<Character, CharactersRespons>();
             CreateMap<AddCharacterRequest, Character>();
+            CreateMap<UpdateCharacterRequest, Character>();
         }
     }
 }

@@ -15,5 +15,9 @@ namespace Characters.Services
         Task<CharactersRespons> GetById(int id);
         Task<IList<CharactersRespons>> GetByName(string name);
         Task<int> AddCharacter(AddCharacterRequest request);
+        Task UpdateCharacter(UpdateCharacterRequest request);
+        Task DeleteCharacter(int id);
+        Task<bool> IsCharacterExist(int id);
+
     }
 }
