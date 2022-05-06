@@ -45,7 +45,7 @@ namespace Characters.Dal
                 new Race() { Id=11, Name= "Balrogs"},
                 new Race() { Id=12, Name= "Dragons"},
                 new Race() { Id=13, Name= "Easterlings" },
-                new Race() { Id=14, Name= "Valar" }
+                new Race() { Id=14, Name= "Ainur" }
                 );
 
             modelBuilder.Entity<Character>().HasData(
