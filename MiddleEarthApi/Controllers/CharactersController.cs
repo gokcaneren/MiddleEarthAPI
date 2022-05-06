@@ -61,7 +61,7 @@ namespace MiddleEarthApi.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            return NotFound(new { message = $"Charcter {id} not found" });
+            return NotFound(new { message = $"Charcter with id:{id} not found" });
         }
     }
 }
