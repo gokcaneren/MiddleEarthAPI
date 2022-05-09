@@ -4,6 +4,7 @@ using Characters.Entities;
 using Characters.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MiddleEarthApi.Filters;
 
 namespace MiddleEarthApi.Controllers
 {
@@ -50,29 +51,23 @@ namespace MiddleEarthApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [IsExist]
         public async Task<IActionResult> Update(int id, UpdateCharacterRequest request)
         {
-            if (await _characterService.IsCharacterExist(id))
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    await _characterService.UpdateCharacter(request);
-                    return Ok();
-                }
-                return BadRequest(ModelState);
+                await _characterService.UpdateCharacter(request);
+                return Ok();
             }
-            return NotFound(new { message = $"Charcter with id:{id} not found" });
+            return BadRequest(ModelState);
         }
 
         [HttpDelete("{id}")]
+        [IsExist]
         public async Task<IActionResult> Delete(int id)
         {
-            if (await _characterService.IsCharacterExist(id))
-            {
-                await _characterService.DeleteCharacter(id);
-                return Ok();
-            }
-            return NotFound(new { message = $"Charcter with id:{id} not found" });
+             await _characterService.DeleteCharacter(id);
+             return Ok();
         }
     }
 }
