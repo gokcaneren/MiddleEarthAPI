@@ -26,6 +26,7 @@ namespace MiddleEarthApi.Controllers
         }
         
         [HttpGet("{id}")]
+        [IsExist]
         public async Task<IActionResult> GetById(int id)
         {
             CharactersRespons character = await _characterService.GetById(id);
