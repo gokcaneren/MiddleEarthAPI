@@ -1,4 +1,4 @@
-using Characters.Dal;
+﻿using Characters.Dal;
 using Characters.Dal.Repository;
 using Characters.Services;
 using Characters.Services.Mapping;
@@ -21,9 +21,32 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt=>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("db"));
 });
 
+builder.Services.AddCors(opt => opt.AddPolicy("allow",corsBuilder =>
+{
+    corsBuilder.AllowAnyOrigin();
+    corsBuilder.AllowAnyMethod();
+    corsBuilder.AllowAnyHeader();
+}));
 
 
 var app = builder.Build();
+
+//app.Map("/test", mbuilder =>
+//{
+//    mbuilder.Run(async (context) =>
+//    {
+//        if (context.Request.Query.ContainsKey("id"))
+//        {
+//            int id = int.Parse(context.Request.Query["id"]);
+//            await context.Response.WriteAsync($"{id} değeri middleware ulaştı!");
+//        }
+//        else
+//        {
+//            await context.Response.WriteAsync($" id middleware ulaşmadı!");
+//        }
+
+//    });
+//});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -33,6 +56,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("allow");
 
 app.UseAuthorization();
 
