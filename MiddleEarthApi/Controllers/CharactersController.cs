@@ -2,6 +2,7 @@
 using Characters.DTO.Responses;
 using Characters.Entities;
 using Characters.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MiddleEarthApi.Filters;
@@ -41,6 +42,7 @@ namespace MiddleEarthApi.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Add(AddCharacterRequest request)
         {
             if (ModelState.IsValid)

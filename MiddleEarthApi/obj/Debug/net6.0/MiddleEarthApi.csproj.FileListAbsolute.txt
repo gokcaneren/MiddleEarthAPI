@@ -69,3 +69,4 @@ C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\ne
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Characters.DTO.pdb
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Gok\Desktop\c# console proje\MiddleEarthApi\MiddleEarthApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

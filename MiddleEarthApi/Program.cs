@@ -2,7 +2,10 @@
 using Characters.Dal.Repository;
 using Characters.Services;
 using Characters.Services.Mapping;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IService, CharacterService>();
 builder.Services.AddScoped<ICharacterRepository, CharacterRepository>();
+builder.Services.AddScoped<IUserRepository, FakeUserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAutoMapper(typeof(CharacterMap));
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt=>
@@ -28,6 +33,23 @@ builder.Services.AddCors(opt => opt.AddPolicy("allow",corsBuilder =>
     corsBuilder.AllowAnyHeader();
 }));
 
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("token:secret").Value));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateActor = true,
+                        ValidIssuer = "http://www.kodluyoruz.com",
+                        ValidAudience = "http://client.kodluyoruz.com",
+                        IssuerSigningKey = key
+
+                    };
+                });
 
 var app = builder.Build();
 
